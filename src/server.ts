@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // API endpoint to get all water flow data
-app.get('/api/water-flow', (req, res) => {
+app.get('/api/water-flow', async (req, res) => {
   try {
-    const data = getAllWaterFlowData();
+    const data = await getAllWaterFlowData();
     res.json(data);
   } catch (error) {
     console.error('Error retrieving water flow data:', error);

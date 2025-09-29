@@ -19,7 +19,7 @@ async function pollWebsiteAndUpdateDB() {
     console.log(`Got data: ${data.lastUpdate}`);
 
     // Save data to the database if it doesn't already exist
-    const saved = saveWaterFlowData(data);
+    const saved = await saveWaterFlowData(data);
 
     if (saved) {
       console.log(`New data saved: ${data.lastUpdate}`);
